@@ -8,7 +8,14 @@ public class Actor {
     String gender;
     int age;
 
-    //setter method for the Actor class
+    public Actor(String name,String gender,int age)
+    {
+        this.name = name;
+        this.gender = gender;
+        this.age = age;
+    }
+
+    /*//setter method for the Actor class
 
     public void setName(String name) {
         this.name = name;
@@ -34,7 +41,7 @@ public class Actor {
 
     public int getAge() {
         return age;
-    }
+    }*/
 
     @Override
     public String toString() {
