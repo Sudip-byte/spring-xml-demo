@@ -13,6 +13,9 @@ public class Main {
 
     public  static  void main(String args[]) {
 
+        XmlBeanFactory xmlBeanFactory= new XmlBeanFactory ( new ClassPathResource("beans.xml"));
+        Movie moviebean= (Movie)xmlBeanFactory.getBean("moviecast2");
+
         ApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
         Movie movieFirst= (Movie)context.getBean("moviecast1");
 
@@ -21,6 +24,10 @@ public class Main {
 
         System.out.println(movieFirst.getActor());
         System.out.println(movie.getActor());
+
+        movie.setApplicationContext(applicationContext);
+        moviebean.setBeanFactory(xmlBeanFactory);
+        movie.setBeanName("beam123");
 
     }
 }
